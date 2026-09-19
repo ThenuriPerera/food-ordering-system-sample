@@ -1,0 +1,620 @@
+/* ========================================
+   FOODHUB - MAIN STYLESHEET
+   ======================================== */
+
+
+/* ========================================
+   1. RESET & GENERAL STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ========================================
+   2. HEADER
+   ======================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+header h1 {
+    font-size: 30px;
+    color: #e85d04;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e85d04;
+}
+
+
+/* ========================================
+   3. HERO SECTION
+   ======================================== */
+
+body > section:first-of-type {
+    text-align: center;
+
+    padding: 110px 20px;
+
+    background-color: #fff3e8;
+}
+
+body > section:first-of-type h2 {
+    font-size: 48px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+
+    color: #222222;
+}
+
+body > section:first-of-type p {
+    font-size: 18px;
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #555555;
+}
+
+body > section:first-of-type a {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: #e85d04;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+body > section:first-of-type a:hover {
+    background-color: #c94d00;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   4. GENERAL SECTIONS
+   ======================================== */
+
+section {
+    padding: 70px 60px;
+}
+
+section > h2 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 40px;
+
+    color: #222222;
+}
+
+
+/* ========================================
+   5. FOOD CATEGORIES
+   ======================================== */
+
+section:nth-of-type(2) > div {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+section:nth-of-type(2) > div > div {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background-color: #f8f8f8;
+
+    border-radius: 10px;
+
+    border: 1px solid #eeeeee;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+section:nth-of-type(2) > div > div:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+section:nth-of-type(2) > div > div h3 {
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+    color: #e85d04;
+}
+
+section:nth-of-type(2) > div > div p {
+    color: #666666;
+}
+
+
+/* ========================================
+   6. POPULAR FOODS
+   ======================================== */
+
+section:nth-of-type(3) > div {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* Food card */
+
+section:nth-of-type(3) article {
+    background-color: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    padding-bottom: 25px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+section:nth-of-type(3) article:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Food image */
+
+section:nth-of-type(3) article img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+
+/* Food title */
+
+section:nth-of-type(3) article h3 {
+    margin: 20px 20px 10px;
+
+    font-size: 22px;
+
+    color: #222222;
+}
+
+
+/* Food description */
+
+section:nth-of-type(3) article p {
+    margin: 0 20px 10px;
+
+    color: #666666;
+}
+
+
+/* Food price */
+
+section:nth-of-type(3) article p:nth-of-type(2) {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #e85d04;
+
+    margin-top: 15px;
+}
+
+
+/* View details button */
+
+section:nth-of-type(3) article a {
+    display: inline-block;
+
+    margin: 10px 20px 0;
+
+    padding: 10px 20px;
+
+    background-color: #e85d04;
+
+    color: #ffffff;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: background-color 0.3s ease;
+}
+
+section:nth-of-type(3) article a:hover {
+    background-color: #c94d00;
+}
+
+
+/* ========================================
+   7. WHY CHOOSE US
+   ======================================== */
+
+section:nth-of-type(4) {
+    background-color: #fafafa;
+}
+
+section:nth-of-type(4) > div {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+section:nth-of-type(4) > div > div {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    border: 1px solid #eeeeee;
+}
+
+section:nth-of-type(4) h3 {
+    margin-bottom: 15px;
+
+    font-size: 22px;
+
+    color: #e85d04;
+}
+
+section:nth-of-type(4) p {
+    color: #666666;
+}
+
+
+/* ========================================
+   8. CALL TO ACTION
+   ======================================== */
+
+section:nth-of-type(5) {
+    text-align: center;
+
+    background-color: #fff3e8;
+}
+
+section:nth-of-type(5) p {
+    margin-bottom: 25px;
+
+    color: #555555;
+}
+
+section:nth-of-type(5) a {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background-color: #e85d04;
+
+    color: #ffffff;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+section:nth-of-type(5) a:hover {
+    background-color: #c94d00;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   9. FOOTER
+   ======================================== */
+
+footer {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 40px;
+
+    padding: 50px 60px 20px;
+
+    background-color: #222222;
+
+    color: #ffffff;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+
+    color: #ffffff;
+}
+
+footer p {
+    color: #cccccc;
+}
+
+footer a {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cccccc;
+
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e85d04;
+}
+
+footer > p {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #444444;
+
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   10. TABLET RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 992px) {
+
+    header {
+        padding: 20px 30px;
+    }
+
+    section {
+        padding: 60px 30px;
+    }
+
+    section:nth-of-type(2) > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section:nth-of-type(3) > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section:nth-of-type(4) > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        padding: 40px 30px 20px;
+    }
+}
+
+
+/* ========================================
+   11. MOBILE RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    header {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    /* Hero */
+
+    body > section:first-of-type {
+        padding: 70px 20px;
+    }
+
+    body > section:first-of-type h2 {
+        font-size: 36px;
+    }
+
+    body > section:first-of-type p {
+        font-size: 16px;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 50px 20px;
+    }
+
+    section > h2 {
+        font-size: 28px;
+    }
+
+
+    /* Categories */
+
+    section:nth-of-type(2) > div {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    /* Food cards */
+
+    section:nth-of-type(3) > div {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    /* Why choose us */
+
+    section:nth-of-type(4) > div {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        grid-template-columns: 1fr;
+
+        padding: 40px 20px 20px;
+
+        gap: 30px;
+    }
+
+    footer > p {
+        grid-column: auto;
+    }
+
+}
+
+
+/* ========================================
+   12. SMALL MOBILE DEVICES
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    body > section:first-of-type h2 {
+        font-size: 30px;
+    }
+
+    section:nth-of-type(2) > div {
+        grid-template-columns: 1fr;
+    }
+
+    section > h2 {
+        font-size: 26px;
+    }
+
+}
