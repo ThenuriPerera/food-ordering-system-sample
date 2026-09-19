@@ -5,55 +5,92 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Menu - Foodie</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css">
 
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header>
 
         <div class="logo">
-            Foodie
+            🍔 Foodie
         </div>
 
-        <nav class="navbar">
+        <nav>
 
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Login</a>
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="#">
+                Cart (<span id="cartCount">0</span>)
+            </a>
 
         </nav>
 
     </header>
 
 
-    <!-- Menu Heading -->
+    <!-- ============================= -->
+    <!-- MENU HEADER -->
+    <!-- ============================= -->
+
     <section class="menu-header">
 
-        <h1>Our Menu</h1>
+        <h1>
+            Our Menu
+        </h1>
 
-        <p>Choose your favourite food</p>
+        <p>
+            Choose your favourite food
+        </p>
 
     </section>
 
 
-    <!-- Food Menu -->
-    <section class="food-menu">
+    <!-- ============================= -->
+    <!-- SEARCH -->
+    <!-- ============================= -->
 
-        <h2>Popular Foods</h2>
+    <section class="search-section">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search food...">
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- FOOD MENU -->
+    <!-- ============================= -->
+
+    <section class="food-menu">
 
         <div class="food-container">
 
 
-            <!-- Food 1 -->
+            <!-- BURGER -->
+
             <div class="food-card">
 
                 <div class="food-image">
@@ -62,11 +99,13 @@
 
                 <div class="food-info">
 
-                    <h3>Classic Burger</h3>
+                    <h3>
+                        Classic Burger
+                    </h3>
 
                     <p>
-                        Delicious beef burger with cheese,
-                        lettuce and tomato.
+                        Juicy beef burger with
+                        fresh vegetables.
                     </p>
 
                     <div class="food-bottom">
@@ -75,8 +114,12 @@
                             Rs. 850
                         </span>
 
-                        <a href="food-details.html">
+                        <a
+                            href="food-details.html"
+                            class="view-button">
+
                             View Details
+
                         </a>
 
                     </div>
@@ -86,7 +129,8 @@
             </div>
 
 
-            <!-- Food 2 -->
+            <!-- PIZZA -->
+
             <div class="food-card">
 
                 <div class="food-image">
@@ -95,20 +139,27 @@
 
                 <div class="food-info">
 
-                    <h3>Cheese Pizza</h3>
+                    <h3>
+                        Cheese Pizza
+                    </h3>
 
                     <p>
-                        Delicious pizza with mozzarella cheese.
+                        Delicious pizza with
+                        melted cheese.
                     </p>
 
                     <div class="food-bottom">
 
                         <span class="price">
-                            Rs. 1,500
+                            Rs. 1200
                         </span>
 
-                        <a href="food-details.html">
+                        <a
+                            href="food-details.html"
+                            class="view-button">
+
                             View Details
+
                         </a>
 
                     </div>
@@ -118,7 +169,8 @@
             </div>
 
 
-            <!-- Food 3 -->
+            <!-- FRIED CHICKEN -->
+
             <div class="food-card">
 
                 <div class="food-image">
@@ -127,20 +179,27 @@
 
                 <div class="food-info">
 
-                    <h3>Fried Chicken</h3>
+                    <h3>
+                        Fried Chicken
+                    </h3>
 
                     <p>
-                        Crispy fried chicken with special spices.
+                        Crispy and delicious
+                        fried chicken.
                     </p>
 
                     <div class="food-bottom">
 
                         <span class="price">
-                            Rs. 1,200
+                            Rs. 950
                         </span>
 
-                        <a href="food-details.html">
+                        <a
+                            href="food-details.html"
+                            class="view-button">
+
                             View Details
+
                         </a>
 
                     </div>
@@ -150,7 +209,8 @@
             </div>
 
 
-            <!-- Food 4 -->
+            <!-- PASTA -->
+
             <div class="food-card">
 
                 <div class="food-image">
@@ -159,20 +219,27 @@
 
                 <div class="food-info">
 
-                    <h3>Chicken Pasta</h3>
+                    <h3>
+                        Chicken Pasta
+                    </h3>
 
                     <p>
-                        Creamy pasta with chicken and vegetables.
+                        Creamy pasta with
+                        delicious chicken.
                     </p>
 
                     <div class="food-bottom">
 
                         <span class="price">
-                            Rs. 1,100
+                            Rs. 1100
                         </span>
 
-                        <a href="food-details.html">
+                        <a
+                            href="food-details.html"
+                            class="view-button">
+
                             View Details
+
                         </a>
 
                     </div>
@@ -187,14 +254,22 @@
     </section>
 
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer>
 
         <p>
             &copy; 2026 Foodie. All Rights Reserved.
         </p>
 
     </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 

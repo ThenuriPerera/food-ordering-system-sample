@@ -16,34 +16,44 @@
 <body>
 
 
-    <!-- Header -->
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
 
-    <header class="header">
+    <header>
 
         <div class="logo">
-            Foodie
+            🍔 Foodie
         </div>
 
-        <nav class="navbar">
+        <nav>
 
             <a href="index.html">Home</a>
+
             <a href="menu.html">Menu</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Login</a>
+
+            <a href="food-details.html">Food Details</a>
+
+            <a href="#">
+                Cart (<span id="cartCount">0</span>)
+            </a>
 
         </nav>
 
     </header>
 
 
-    <!-- Food Details -->
+    <!-- ============================= -->
+    <!-- FOOD DETAILS -->
+    <!-- ============================= -->
 
     <section class="food-details">
 
         <div class="food-details-image">
 
-            <span>🍔</span>
+            <div class="food-image">
+                🍔
+            </div>
 
         </div>
 
@@ -57,17 +67,12 @@
             </p>
 
             <p>
-                Our Classic Burger is made with a juicy beef
-                patty, fresh lettuce, tomato and cheese.
-            </p>
-
-            <p>
-                It is served with fresh ingredients and
-                our special burger sauce.
+                A delicious classic burger made with a juicy
+                beef patty, fresh vegetables and our special sauce.
             </p>
 
 
-            <!-- Quantity -->
+            <!-- QUANTITY -->
 
             <div class="quantity">
 
@@ -75,28 +80,50 @@
                     Quantity:
                 </label>
 
+                <button
+                    type="button"
+                    id="decrease">
+                    -
+                </button>
+
                 <input
                     type="number"
                     id="quantity"
                     value="1"
-                    min="1"
-                >
+                    min="1">
+
+                <button
+                    type="button"
+                    id="increase">
+                    +
+                </button>
 
             </div>
 
 
-            <!-- Add Cart -->
+            <!-- ADD TO CART -->
 
-            <button class="add-cart-button">
+            <button
+                class="add-cart-button"
+                id="addToCart"
+                type="button">
+
                 Add to Cart
+
             </button>
 
 
             <br><br>
 
 
-            <a href="menu.html" class="back-menu">
+            <!-- BACK TO MENU -->
+
+            <a
+                href="menu.html"
+                class="back-menu">
+
                 ← Back to Menu
+
             </a>
 
         </div>
@@ -104,9 +131,11 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
 
-    <footer class="footer">
+    <footer>
 
         <p>
             &copy; 2026 Foodie. All Rights Reserved.
@@ -114,6 +143,10 @@
 
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 
