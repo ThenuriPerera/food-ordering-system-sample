@@ -734,3 +734,149 @@ footer > p {
     }
 
 }
+
+/* =========================
+   FOOD DETAILS PAGE
+========================= */
+
+.food-details {
+    min-height: 600px;
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+
+    background-color: #f8f8f8;
+}
+
+
+/* Food Image */
+
+.food-details-image {
+    width: 450px;
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #eeeeee;
+
+    border-radius: 15px;
+}
+
+.food-details-image span {
+    font-size: 180px;
+}
+
+
+/* Food Information */
+
+.food-details-info {
+    max-width: 500px;
+}
+
+.food-details-info h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.food-details-price {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.food-details-info p {
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* Quantity */
+
+.quantity {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.quantity label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.quantity input {
+    width: 70px;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Add Cart Button */
+
+.add-cart-button {
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #ff6b35;
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.add-cart-button:hover {
+    opacity: 0.85;
+}
+
+
+/* Back to Menu */
+
+.back-menu {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .food-details {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .food-details-image {
+        width: 350px;
+        height: 350px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .food-details-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .food-details-image span {
+        font-size: 120px;
+    }
+
+    .food-details-info h1 {
+        font-size: 32px;
+    }
+
+}
