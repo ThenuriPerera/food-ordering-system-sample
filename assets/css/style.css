@@ -1027,3 +1027,44 @@ footer > p {
 .register-link a {
     text-decoration: none;
 }
+
+.profile-section {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-container > p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-info {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.profile-info p {
+    margin-bottom: 15px;
+}
+
+.profile-info p:last-child {
+    margin-bottom: 0;
+}
