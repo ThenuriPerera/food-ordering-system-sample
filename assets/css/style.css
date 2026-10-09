@@ -1068,3 +1068,67 @@ footer > p {
 .profile-info p:last-child {
     margin-bottom: 0;
 }
+
+.food-management {
+    min-height: 70vh;
+    padding: 50px 20px;
+}
+
+.food-management-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.food-management-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.food-management-container > p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.add-food-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ff6b35;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.add-food-button:hover {
+    opacity: 0.9;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f5f5f5;
+}
+
+table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+table a {
+    text-decoration: none;
+}
