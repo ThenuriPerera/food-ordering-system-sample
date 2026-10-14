@@ -1132,3 +1132,65 @@ table tr:nth-child(even) {
 table a {
     text-decoration: none;
 }
+
+.add-food-section {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.add-food-container {
+    width: 100%;
+    max-width: 550px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.add-food-container h1,
+.add-food-container > p {
+    text-align: center;
+}
+
+.add-food-container h1 {
+    margin-bottom: 10px;
+}
+
+.add-food-container > p {
+    margin-bottom: 25px;
+}
+
+.add-food-container select,
+.add-food-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.add-food-container select:focus,
+.add-food-container textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+}
+
+.add-food-container textarea {
+    resize: vertical;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #ff6b35;
+    text-decoration: none;
+}
