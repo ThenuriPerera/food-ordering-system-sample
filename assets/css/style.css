@@ -1194,3 +1194,36 @@ table a {
     color: #ff6b35;
     text-decoration: none;
 }
+
+
+/* Edit and Delete buttons */
+.edit-food-button,
+.delete-food-button {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+/* Edit button */
+.edit-food-button {
+    background-color: #0d6efd;
+}
+
+.edit-food-button:hover {
+    background-color: #0b5ed7;
+}
+
+/* Delete button */
+.delete-food-button {
+    background-color: #dc3545;
+}
+
+.delete-food-button:hover {
+    background-color: #b02a37;
+}
