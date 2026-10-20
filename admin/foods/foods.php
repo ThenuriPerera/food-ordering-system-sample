@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "../config/db.php";
+require_once "../../config/db.php";
 
 // Generate a CSRF token
 if (!isset($_SESSION["csrf_token"])) {
