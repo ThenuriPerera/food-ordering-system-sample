@@ -2,6 +2,12 @@
 
 require_once "../../config/db.php";
 
+$message = "";
+
+if (isset($_GET["added"]) && $_GET["added"] === "1") {
+    $message = "Food added successfully!";
+}
+
 $sql = "SELECT foods.*, categories.name AS category_name
         FROM foods
         INNER JOIN categories
@@ -73,6 +79,12 @@ if (!$result) {
         <h1>
             Manage Foods
         </h1>
+
+        <?php if ($message !== ""): ?>
+            <p class="form-message success">
+                <?= htmlspecialchars($message) ?>
+            </p>
+        <?php endif; ?>
 
         <p>
             View all foods in the system.
