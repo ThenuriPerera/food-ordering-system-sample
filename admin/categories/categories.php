@@ -3,7 +3,17 @@
 
 session_start();
 
-require_once "../../config/db.php";
+require_once "../config/db.php";
+
+$message = "";
+$messageType = "success";
+
+// Display success messages
+if (isset($_GET["added"]) && $_GET["added"] === "1") {
+    $message = "Category added successfully!";
+} elseif (isset($_GET["updated"]) && $_GET["updated"] === "1") {
+    $message = "Category updated successfully!";
+}
 
 // Retrieve all categories
 $sql = "SELECT id, name, description
@@ -56,6 +66,12 @@ if (!$result) {
 
         <p>View and manage your food categories.</p>
 
+        <?php if ($message !== ""): ?>
+            <p class="form-message <?= htmlspecialchars($messageType) ?>">
+                <?= htmlspecialchars($message) ?>
+            </p>
+        <?php endif; ?>
+
         <a href="add-category.php" class="add-food-button">
             + Add New Category
         </a>
@@ -80,7 +96,7 @@ if (!$result) {
 
                             <tr>
                                 <td>
-                                    <?= (int)$category["id"] ?>
+                                    <?= (int) $category["id"] ?>
                                 </td>
 
                                 <td>
@@ -93,9 +109,8 @@ if (!$result) {
 
                                 <td>
                                     <a
-                                        href="edit-category.php?id=<?= (int)$category['id'] ?>"
-                                        class="edit-food-button"
-                                    >
+                                        href="edit-category.php?id=<?= (int) $category["id"] ?>"
+                                        class="edit-food-button">
                                         Edit
                                     </a>
                                 </td>
@@ -126,3 +141,8 @@ if (!$result) {
 
 </body>
 </html>
+
+<?php
+mysqli_free_result($result);
+mysqli_close($conn);
+?>

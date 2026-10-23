@@ -1,13 +1,18 @@
 
 <?php
-
+ 
 session_start();
 
-require_once "../config/db.php";
+require_once "../../config/db.php";
 
 $message = "";
 $messageType = "";
 
+if (isset($_GET["added"]) && $_GET["added"] === "1") {
+    $message = "Category added successfully!";
+} elseif (isset($_GET["updated"]) && $_GET["updated"] === "1") {
+    $message = "Category updated successfully!";
+}
 // Process the form when submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
