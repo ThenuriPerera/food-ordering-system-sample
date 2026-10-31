@@ -3,6 +3,10 @@
 
 session_start();
 
+if (!isset($_SESSION["csrf_token"])) {
+    $_SESSION["csrf_token"] = bin2hex(random_bytes(32));
+}
+
 require_once "../config/db.php";
 
 $message = "";
@@ -13,6 +17,31 @@ if (isset($_GET["added"]) && $_GET["added"] === "1") {
     $message = "Category added successfully!";
 } elseif (isset($_GET["updated"]) && $_GET["updated"] === "1") {
     $message = "Category updated successfully!";
+}$message = "";
+$messageType = "success";
+
+if (isset($_GET["added"]) && $_GET["added"] === "1") {
+    $message = "Category added successfully!";
+
+} elseif (isset($_GET["updated"]) && $_GET["updated"] === "1") {
+    $message = "Category updated successfully!";
+
+} elseif (isset($_GET["deleted"]) && $_GET["deleted"] === "1") {
+    $message = "Category deleted successfully!";
+
+} elseif (isset($_GET["delete_error"])) {
+
+    $messageType = "error";
+
+    if ($_GET["delete_error"] === "used") {
+        $message = "Cannot delete this category because it is used by food items.";
+
+    } elseif ($_GET["delete_error"] === "invalid") {
+        $message = "Invalid category ID.";
+
+    } else {
+        $message = "Unable to delete the category. Please try again.";
+    }
 }
 
 // Retrieve all categories
@@ -113,6 +142,30 @@ if (!$result) {
                                         class="edit-food-button">
                                         Edit
                                     </a>
+
+                                    <form
+                                        action="delete-category.php"
+                                        method="POST"
+                                        style="display: inline;"
+                                        onsubmit="return confirm('Are you sure you want to delete this category?');">
+
+                                        <input
+                                            type="hidden"
+                                            name="category_id"
+                                            value="<?= (int) $category["id"] ?>"
+                                        >
+
+                                        <input
+                                            type="hidden"
+                                            name="csrf_token"
+                                            value="<?= htmlspecialchars($_SESSION["csrf_token"] ?? "") ?>"
+                                        >
+
+                                        <button type="submit" class="delete-food-button">
+                                            Delete
+                                        </button>
+
+                                    </form>
                                 </td>
                             </tr>
 
