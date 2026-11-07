@@ -7,7 +7,7 @@ if (!isset($_SESSION["csrf_token"])) {
     $_SESSION["csrf_token"] = bin2hex(random_bytes(32));
 }
 
-require_once "../config/db.php";
+require_once "../../config/db.php";
 
 $message = "";
 $messageType = "success";
