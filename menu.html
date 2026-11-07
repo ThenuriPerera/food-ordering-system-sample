@@ -40,8 +40,8 @@
                 Menu
             </a>
 
-            <a href="#">
-                Cart (<span id="cartCount">0</span>)
+            <a href="cart.php">
+                Cart
             </a>
 
         </nav>
@@ -104,8 +104,7 @@
                     </h3>
 
                     <p>
-                        Juicy beef burger with
-                        fresh vegetables.
+                        Juicy beef burger with fresh vegetables.
                     </p>
 
                     <div class="food-bottom">
@@ -124,6 +123,31 @@
 
                     </div>
 
+                    <form action="cart.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="food_id"
+                            value="1">
+
+                        <label for="quantity1">
+                            Quantity:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity1"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            required>
+
+                        <button type="submit">
+                            Add to Cart
+                        </button>
+
+                    </form>
+
                 </div>
 
             </div>
@@ -135,6 +159,7 @@
 
                 <div class="food-image">
                     🍕
+
                 </div>
 
                 <div class="food-info">
@@ -144,8 +169,7 @@
                     </h3>
 
                     <p>
-                        Delicious pizza with
-                        melted cheese.
+                        Delicious pizza with melted cheese.
                     </p>
 
                     <div class="food-bottom">
@@ -163,6 +187,31 @@
                         </a>
 
                     </div>
+
+                    <form action="cart.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="food_id"
+                            value="2">
+
+                        <label for="quantity2">
+                            Quantity:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity2"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            required>
+
+                        <button type="submit">
+                            Add to Cart
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -184,8 +233,7 @@
                     </h3>
 
                     <p>
-                        Crispy and delicious
-                        fried chicken.
+                        Crispy and delicious fried chicken.
                     </p>
 
                     <div class="food-bottom">
@@ -203,6 +251,31 @@
                         </a>
 
                     </div>
+
+                    <form action="cart.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="food_id"
+                            value="3">
+
+                        <label for="quantity3">
+                            Quantity:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity3"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            required>
+
+                        <button type="submit">
+                            Add to Cart
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -224,8 +297,7 @@
                     </h3>
 
                     <p>
-                        Creamy pasta with
-                        delicious chicken.
+                        Creamy pasta with delicious chicken.
                     </p>
 
                     <div class="food-bottom">
@@ -243,6 +315,31 @@
                         </a>
 
                     </div>
+
+                    <form action="cart.php" method="POST">
+
+                        <input
+                            type="hidden"
+                            name="food_id"
+                            value="4">
+
+                        <label for="quantity4">
+                            Quantity:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantity4"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            required>
+
+                        <button type="submit">
+                            Add to Cart
+                        </button>
+
+                    </form>
 
                 </div>
 
