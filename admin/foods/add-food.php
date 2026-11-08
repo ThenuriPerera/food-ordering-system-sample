@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <link
         rel="stylesheet"
-        href="../assets/css/style.css">
+        href="../../assets/css/style.css">
 </head>
 
 <body>
@@ -125,10 +125,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="logo">🍔 Foodie Admin</div>
 
     <nav>
-        <a href="../index.html">Home</a>
+        <a href="../../index.php">Home</a>
         <a href="foods.php">Manage Foods</a>
-        <a href="../auth/profile.php">Profile</a>
-        <a href="../auth/logout.php">Logout</a>
+        <a href="../../auth/profile.php">Profile</a>
+        <a href="../../auth/logout.php">Logout</a>
     </nav>
 </header>
 
@@ -234,4 +234,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </body>
 </html>
-

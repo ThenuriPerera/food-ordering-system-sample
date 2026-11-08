@@ -28,15 +28,13 @@
 
         <nav>
 
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
 
             <a href="menu.html">Menu</a>
 
             <a href="food-details.html">Food Details</a>
 
-            <a href="#">
-                Cart (<span id="cartCount">0</span>)
-            </a>
+            <a href="cart/cart.php">Cart</a>
 
         </nav>
 
@@ -103,14 +101,11 @@
 
             <!-- ADD TO CART -->
 
-            <button
-                class="add-cart-button"
-                id="addToCart"
-                type="button">
-
-                Add to Cart
-
-            </button>
+            <form action="cart/add.php" method="POST">
+                <input type="hidden" name="food_id" value="1">
+                <input type="hidden" name="quantity" id="cartQuantity" value="1">
+                <button class="add-cart-button" type="submit">Add to Cart</button>
+            </form>
 
 
             <br><br>
@@ -147,6 +142,19 @@
     <!-- JAVASCRIPT -->
 
     <script src="assets/js/script.js"></script>
+    <script>
+        const quantity = document.getElementById("quantity");
+        const cartQuantity = document.getElementById("cartQuantity");
+        const addToCartForm = cartQuantity.form;
+
+        quantity.addEventListener("input", function () {
+            cartQuantity.value = Math.max(1, Number(quantity.value) || 1);
+        });
+
+        addToCartForm.addEventListener("submit", function () {
+            cartQuantity.value = Math.max(1, Number(quantity.value) || 1);
+        });
+    </script>
 
 </body>
 

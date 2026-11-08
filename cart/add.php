@@ -11,7 +11,7 @@ if (!isset($_SESSION["cart"])) {
 
 // Accept POST requests only
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: menu.html");
+    header("Location: ../menu.html");
     exit;
 }
 
@@ -30,7 +30,7 @@ $quantity = filter_input(
 
 // Validate food ID and quantity
 if (!$foodId || $foodId < 1 || !$quantity || $quantity < 1) {
-    header("Location: menu.html?error=invalid");
+    header("Location: ../menu.html?error=invalid");
     exit;
 }
 
@@ -50,7 +50,7 @@ mysqli_stmt_close($stmt);
 
 if (!$food) {
     mysqli_close($conn);
-    header("Location: menu.html?error=not_found");
+    header("Location: ../menu.html?error=not_found");
     exit;
 }
 

@@ -60,7 +60,7 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
 
     <title>Shopping Cart - Foodie</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
@@ -72,8 +72,8 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
     </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
+        <a href="../index.php">Home</a>
+        <a href="../menu.html">Menu</a>
         <a href="cart.php">Cart (<?= $totalItems ?>)</a>
     </nav>
 
@@ -108,10 +108,10 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                     <thead>
                         <tr>
                             <th>Food Name</th>
+                            <th>Action</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Subtotal</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -181,16 +181,16 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                 Total: Rs. <?= number_format($totalPrice, 2) ?>
             </h2>
 
-            <a href="menu.html" class="add-food-button">
+            <a href="../menu.html" class="add-food-button">
                 Continue Shopping
             </a>
 
             <div class="cart-actions">
-                <a href="menu.html" class="cart-button">
+                <a href="../menu.html" class="cart-button">
                     Continue Shopping
                 </a>
 
-                <a href="checkout.php" class="cart-button">
+                <a href="../checkout/checkout.php" class="cart-button">
                     Proceed to Checkout
                 </a>
             </div>
@@ -199,7 +199,7 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
 
             <p>Your shopping cart is empty.</p>
 
-            <a href="menu.html" class="add-food-button">
+            <a href="../menu.html" class="add-food-button">
                 Browse Food Menu
             </a>
 

@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <title>Edit Category - Foodie</title>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>
@@ -142,8 +142,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="foods.php">Manage Foods</a>
+        <a href="../../index.php">Home</a>
+        <a href="../foods/foods.php">Manage Foods</a>
         <a href="categories.php">Manage Categories</a>
     </nav>
 </header>

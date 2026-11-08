@@ -6,7 +6,7 @@ require_once "../config/db.php";
 
 // Check whether the cart exists
 if (!isset($_SESSION["cart"]) || empty($_SESSION["cart"])) {
-    header("Location: cart.php?error=empty");
+    header("Location: ../cart/cart.php?error=empty");
     exit;
 }
 
@@ -47,7 +47,7 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
 
 // Check whether valid food items remain
 if (empty($cartItems)) {
-    header("Location: cart.php?error=empty");
+    header("Location: ../cart/cart.php?error=empty");
     exit;
 }
 
@@ -62,7 +62,7 @@ if (empty($cartItems)) {
 
     <title>Checkout - Foodie</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
@@ -71,9 +71,9 @@ if (empty($cartItems)) {
         <div class="logo">Foodie</div>
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="cart.php">My Cart</a>
+            <a href="../index.php">Home</a>
+            <a href="../menu.html">Menu</a>
+            <a href="../cart/cart.php">My Cart</a>
         </nav>
     </header>
 
