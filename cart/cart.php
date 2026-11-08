@@ -181,6 +181,20 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                 Total: Rs. <?= number_format($totalPrice, 2) ?>
             </h2>
 
+            <a href="menu.html" class="add-food-button">
+                Continue Shopping
+            </a>
+
+            <div class="cart-actions">
+                <a href="menu.html" class="cart-button">
+                    Continue Shopping
+                </a>
+
+                <a href="checkout.php" class="cart-button">
+                    Proceed to Checkout
+                </a>
+            </div>
+
         <?php else: ?>
 
             <p>Your shopping cart is empty.</p>

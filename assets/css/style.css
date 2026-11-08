@@ -1227,3 +1227,40 @@ table a {
 .delete-food-button:hover {
     background-color: #b02a37;
 }
+
+/* Shopping Cart Buttons */
+.cart-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.cart-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    background-color: #ca6b17;
+}
+
+.remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #c0392b;
+}
