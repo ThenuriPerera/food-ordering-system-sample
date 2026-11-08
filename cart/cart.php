@@ -126,7 +126,7 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                                 </td>
 
                                 <td>
-                                    <form action="remove-from-cart.php" method="POST"
+                                    <form action="remove.php" method="POST"
                                         onsubmit="return confirm('Remove this item from your cart?');">
 
                                         <input
@@ -144,7 +144,7 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                                 </td>
 
                                 <td>
-                                     <form action="update-cart.php" method="POST">
+                                     <form action="update.php" method="POST">
                                         <input
                                             type="hidden"
                                             name="food_id"
