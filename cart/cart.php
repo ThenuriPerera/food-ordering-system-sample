@@ -85,6 +85,18 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
 
         <h1>My Shopping Cart</h1>
 
+        <?php if (isset($_GET["updated"])): ?>
+            <p>Cart quantity updated successfully!</p>
+        <?php endif; ?>
+
+        <?php if (isset($_GET["removed"])): ?>
+            <p>Item removed from your cart successfully!</p>
+        <?php endif; ?>
+
+        <?php if (isset($_GET["error"])): ?>
+            <p>Unable to update your cart. Please try again.</p>
+        <?php endif; ?>
+
         <p>Review your selected food items.</p>
 
         <?php if (count($cartItems) > 0): ?>
@@ -99,6 +111,7 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Subtotal</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -113,11 +126,41 @@ foreach ($_SESSION["cart"] as $foodId => $quantity) {
                                 </td>
 
                                 <td>
+                                    <form action="remove-from-cart.php" method="POST"
+                                        onsubmit="return confirm('Remove this item from your cart?');">
+
+                                        <input
+                                            type="hidden"
+                                            name="food_id"
+                                            value="<?= (int) $item["id"] ?>"
+                                        >
+
+                                        <button type="submit">Remove</button>
+                                    </form>
+                                </td>
+
+                                <td>
                                     Rs. <?= number_format($item["price"], 2) ?>
                                 </td>
 
                                 <td>
-                                    <?= (int) $item["quantity"] ?>
+                                     <form action="update-cart.php" method="POST">
+                                        <input
+                                            type="hidden"
+                                            name="food_id"
+                                            value="<?= (int) $item["id"] ?>"
+                                        >
+
+                                        <input
+                                            type="number"
+                                            name="quantity"
+                                            value="<?= (int) $item["quantity"] ?>"
+                                            min="1"
+                                            required
+                                        >
+
+                                        <button type="submit">Update</button>
+                                    </form>
                                 </td>
 
                                 <td>
