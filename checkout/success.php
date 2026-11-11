@@ -2,11 +2,14 @@
 
 session_start();
 
-require_once "config/db.php";
+require_once "../config/db.php";
 
 // Check customer login
 if (!isset($_SESSION["user_id"])) {
-    header("Location: auth/login.php");
+    header(
+        "Location: ../auth/login.php?next=success&order_id=" .
+        (int) ($_GET["order_id"] ?? 0)
+    );
     exit;
 }
 
@@ -14,17 +17,19 @@ if (!isset($_SESSION["user_id"])) {
 $orderId = filter_input(INPUT_GET, "order_id", FILTER_VALIDATE_INT);
 
 if (!$orderId || $orderId < 1) {
-    header("Location: index.html");
+    header("Location: ../index.php");
     exit;
 }
 
 // Retrieve order information
 $stmt = mysqli_prepare(
     $conn,
-    "SELECT id, customer_name, phone, address,
-            total_amount, status, created_at
+    "SELECT orders.id, users.name AS customer_name,
+            orders.phone, orders.address, orders.total_amount,
+            orders.status, orders.created_at
      FROM orders
-     WHERE id = ? AND user_id = ?"
+     INNER JOIN users ON orders.user_id = users.id
+     WHERE orders.id = ? AND orders.user_id = ?"
 );
 
 mysqli_stmt_bind_param(
@@ -78,7 +83,7 @@ $itemsResult = mysqli_stmt_get_result($stmt);
     <title>Order Successful - Foodie</title>
 
     <link rel="stylesheet"
-          href="assets/css/style.css">
+          href="../assets/css/style.css">
 </head>
 
 <body>
@@ -87,9 +92,9 @@ $itemsResult = mysqli_stmt_get_result($stmt);
     <div class="logo">Foodie</div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="auth/profile.php">My Profile</a>
+        <a href="../index.php">Home</a>
+        <a href="../menu.html">Menu</a>
+        <a href="../auth/profile.php">My Profile</a>
     </nav>
 </header>
 
@@ -188,7 +193,7 @@ $itemsResult = mysqli_stmt_get_result($stmt);
             <?= htmlspecialchars($order["created_at"]) ?>
         </p>
 
-        <a href="menu.html" class="add-food-button">
+        <a href="../menu.html" class="add-food-button">
             Continue Shopping
         </a>
 

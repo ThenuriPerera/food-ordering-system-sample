@@ -4,6 +4,13 @@ session_start();
 
 require_once "../config/db.php";
 
+$next = $_POST["next"] ?? $_GET["next"] ?? "";
+$nextOrderId = filter_var(
+    $_POST["order_id"] ?? $_GET["order_id"] ?? null,
+    FILTER_VALIDATE_INT
+);
+$nextOrderId = $nextOrderId && $nextOrderId > 0 ? $nextOrderId : null;
+
 $message = "";
 $messageType = "";
 
@@ -63,8 +70,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION["user_email"] = $user["email"];
                 $_SESSION["user_role"] = $user["role"];
 
-                $message = "Login successful!";
-                $messageType = "success";
+                if ($next === "checkout") {
+                    header("Location: ../checkout/checkout.php");
+                    exit;
+                }
+
+                if ($next === "success" && $nextOrderId !== null) {
+                    header(
+                        "Location: ../checkout/success.php?order_id=" .
+                        $nextOrderId
+                    );
+                    exit;
+                }
+
+                header("Location: profile.php");
+                exit;
 
             } else {
 
@@ -113,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <nav>
 
-        <a href="../index.html">
+        <a href="../index.php">
             Home
         </a>
 
@@ -161,6 +181,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             method="POST"
             action="login.php">
 
+            <?php if ($next === "checkout" || ($next === "success" && $nextOrderId !== null)): ?>
+                <input type="hidden" name="next" value="<?= htmlspecialchars($next) ?>">
+                <?php if ($next === "success"): ?>
+                    <input type="hidden" name="order_id" value="<?= (int) $nextOrderId ?>">
+                <?php endif; ?>
+            <?php endif; ?>
 
             <!-- Email -->
 
