@@ -1,0 +1,22 @@
+
+# Stripe secret configuration
+/config/stripe_config.php
+
+# Environment variables
+.env
+.env.*
+
+# Composer dependencies (if installed in the future)
+/vendor/
+
+# Debug and error logs
+*.log
+logs/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code workspace settings
+.vscode/
