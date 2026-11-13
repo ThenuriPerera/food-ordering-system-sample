@@ -280,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["place_order"])) {
 
         <h2>Delivery Information</h2>
 
-        <form action="checkout.php" method="POST">
+        <form action="payments/create-checkout-session.php" method="POST">
 
             <input
                 type="hidden"
