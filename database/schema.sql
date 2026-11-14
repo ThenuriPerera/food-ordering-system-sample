@@ -58,10 +58,14 @@ CREATE TABLE IF NOT EXISTS foods (
 CREATE TABLE IF NOT EXISTS orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
+    customer_name VARCHAR(100),
     total_amount DECIMAL(10,2) NOT NULL,
     status VARCHAR(30) NOT NULL DEFAULT 'Pending',
+    payment_status VARCHAR(20) NOT NULL DEFAULT 'unpaid',
+    stripe_session_id VARCHAR(255),
+    stripe_payment_intent_id VARCHAR(255),
     address VARCHAR(255) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
+    phone VARCHAR(50) NOT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT fk_order_user

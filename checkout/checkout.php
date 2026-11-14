@@ -94,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["place_order"])) {
         // Validate customer information
         if ($phone === "" || $address === "") {
             $error = "Please fill in all delivery information.";
-        } elseif (strlen($phone) > 20 || !preg_match('/^[0-9+\-\s()]{7,20}$/', $phone)) {
-            $error = "Please enter a valid phone number.";
+        } elseif (strlen($phone) > 50) {
+            $error = "Phone number must not exceed 50 characters.";
         } elseif (strlen($address) > 255) {
             $error = "Delivery address must not exceed 255 characters.";
         } else {
@@ -280,7 +280,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["place_order"])) {
 
         <h2>Delivery Information</h2>
 
-        <form action="payments/create-checkout-session.php" method="POST">
+        <form action="../payment/create-checkout-session.php" method="POST">
 
             <input
                 type="hidden"
@@ -288,10 +288,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["place_order"])) {
                 value="<?= htmlspecialchars($_SESSION["csrf_token"]) ?>"
             >
 
-            <p>
-                <strong>Full Name:</strong>
-                <?= htmlspecialchars($_SESSION["user_name"] ?? "") ?>
-            </p>
+            <label for="customer_name">Full Name:</label>
+
+            <input
+                type="text"
+                id="customer_name"
+                name="customer_name"
+                maxlength="100"
+                required
+                value="<?= htmlspecialchars($_SESSION["user_name"] ?? $_POST["customer_name"] ?? "") ?>"
+            >
 
             <label for="phone">Phone Number:</label>
 
@@ -299,7 +305,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["place_order"])) {
                 type="tel"
                 id="phone"
                 name="phone"
-                maxlength="20"
+                maxlength="50"
                 required
                 value="<?= htmlspecialchars($_POST["phone"] ?? "") ?>"
             >

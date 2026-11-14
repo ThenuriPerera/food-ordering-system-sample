@@ -13,12 +13,7 @@ $message = "";
 $messageType = "success";
 
 // Display success messages
-if (isset($_GET["added"]) && $_GET["added"] === "1") {
-    $message = "Category added successfully!";
-} elseif (isset($_GET["updated"]) && $_GET["updated"] === "1") {
-    $message = "Category updated successfully!";
-}$message = "";
-$messageType = "success";
+
 
 if (isset($_GET["added"]) && $_GET["added"] === "1") {
     $message = "Category added successfully!";
@@ -47,7 +42,7 @@ if (isset($_GET["added"]) && $_GET["added"] === "1") {
 // Retrieve all categories
 $sql = "SELECT id, name, description
         FROM categories
-        ORDER BY id DESC";
+        ORDER BY id ASC";
 
 $result = mysqli_query($conn, $sql);
 

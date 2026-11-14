@@ -44,7 +44,7 @@ if (
 if (
     strlen($customerName) > 100 ||
     strlen($address) > 255 ||
-    !preg_match('/^[0-9+\-\s()]{7,20}$/', $phone)
+    strlen($phone) > 50
 ) {
     die("Please enter valid customer information.");
 }
@@ -182,10 +182,10 @@ try {
         "mode" => "payment",
 
         "success_url" =>
-            BASE_URL . "/payments/success.php?session_id={CHECKOUT_SESSION_ID}",
+            BASE_URL . "/payment/success.php?session_id={CHECKOUT_SESSION_ID}",
 
         "cancel_url" =>
-            BASE_URL . "/payments/cancel.php?order_id=" . $orderId,
+            BASE_URL . "/payment/cancel.php?order_id=" . $orderId,
 
         "client_reference_id" => (string) $userId,
 
