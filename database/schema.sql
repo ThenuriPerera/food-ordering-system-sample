@@ -22,6 +22,16 @@ CREATE TABLE IF NOT EXISTS users (
     role VARCHAR(20) NOT NULL DEFAULT 'customer'
 );
 
+-- Demo administrator. Change this password before deploying the application.
+INSERT IGNORE INTO users (name, email, password, phone, role)
+VALUES (
+    'Foodie Administrator',
+    'admin@foodie.local',
+    '$2y$10$KjyOf/5mzZHvSQ0upRe/f.OS7GrkTmJ2sXkocPyasuvwB34/CDFm6',
+    '',
+    'admin'
+);
+
 -- ============================================================
 -- 2. CATEGORIES
 -- ============================================================

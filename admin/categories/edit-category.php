@@ -2,7 +2,16 @@
 
 session_start();
 
+if (!isset($_SESSION["user_id"]) || ($_SESSION["user_role"] ?? "") !== "admin") {
+    header("Location: ../login.php");
+    exit;
+}
+
 require_once "../../config/db.php";
+
+if (empty($_SESSION["csrf_token"])) {
+    $_SESSION["csrf_token"] = bin2hex(random_bytes(32));
+}
 
 $message = "";
 $messageType = "";
@@ -41,6 +50,16 @@ if (!$category) {
 
 // Process the submitted form
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $submittedToken = $_POST["csrf_token"] ?? "";
+    if (
+        !is_string($submittedToken) ||
+        empty($_SESSION["csrf_token"]) ||
+        !hash_equals($_SESSION["csrf_token"], $submittedToken)
+    ) {
+        http_response_code(403);
+        exit("Invalid security token. Please reload the form and try again.");
+    }
 
     $name = trim($_POST["name"] ?? "");
     $description = trim($_POST["description"] ?? "");
@@ -163,6 +182,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php endif; ?>
 
         <form method="POST" action="">
+
+            <input
+                type="hidden"
+                name="csrf_token"
+                value="<?= htmlspecialchars($_SESSION["csrf_token"]) ?>"
+            >
 
             <div class="form-group">
                 <label for="name">Category Name</label>
