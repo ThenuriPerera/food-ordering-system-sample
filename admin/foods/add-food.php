@@ -2,6 +2,15 @@
 
 require_once "../../config/db.php";
 
+// Allow only logged-in administrators
+if (
+    !isset($_SESSION["user_id"]) ||
+    ($_SESSION["user_role"] ?? "") !== "admin"
+) {
+    http_response_code(403);
+    exit("Access denied. Only administrators can add food.");
+}
+
 $message = "";
 $messageType = "";
 
